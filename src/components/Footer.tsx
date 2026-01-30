@@ -1,0 +1,59 @@
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="py-12 border-t border-border relative">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Left - Name & Location */}
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <span className="text-xl font-semibold">
+              João Paulo <span className="text-primary">Pessoa</span>
+            </span>
+            <div className="flex items-center gap-1 text-sm text-muted-foreground">
+              <MapPin className="w-4 h-4" />
+              São Paulo, Brasil
+            </div>
+          </div>
+
+          {/* Center - Social Links */}
+          <div className="flex items-center gap-6">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:contato@joaopessoa.dev"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+          </div>
+
+          {/* Right - Copyright */}
+          <div className="text-sm text-muted-foreground">
+            <span className="code-font">
+              © {currentYear} <span className="text-primary">{"<JP />"}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
